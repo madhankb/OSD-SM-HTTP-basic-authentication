@@ -10,13 +10,14 @@ Docker images repo link → [https://hub.docker.com/r/opensearchproject/opensear
 2. When creating a task, under container definition port mapping make sure the container ports 5601 and 9200 are added.
 3. Under environment variables, add the mandatory keys and values mentioned in this doc to seamlessly connect with managed service domain.
 Link to the doc → https://docs.aws.amazon.com/opensearch-service/latest/developerguide/dashboards.html#dashboards-local.
-4. Execute the service using the previously created task within the identical VPC and subnet where the managed service OpenSearch domain is operating.
-5. Access the self-managed dashboards by hitting the public endpoint of the running task in ECS Fargate. By doing so, you can conveniently view and interact with all the saved objects in accordance with the Fine-Grained Access Control settings.
+***Note: I have added `task.json` file from the ECS task defenition to help understand the environment variables that has to be set while creating tasks***
+5. Execute the service using the previously created task within the identical VPC and subnet where the managed service OpenSearch domain is operating.
+6. Access the self-managed dashboards by hitting the public endpoint of the running task in ECS Fargate. By doing so, you can conveniently view and interact with all the saved objects in accordance with the Fine-Grained Access Control settings.
 
 ## Steps to spin up a self-managed dashboards in EC2 hosted docker container
 1. Deploy an EC2 instance in the same VPC and subnet as the managed OpenSearch service domain.
 2. Set up Docker/Kubernetes and its dependencies on the instance.
-3. Utilize the attached docker-compose.yml file to launch a self-managed dashboards container. After the container is running, you can easily access and interact with all the saved objects.
+3. Utilize the attached `docker-compose.yml` file to launch a self-managed dashboards container. After the container is running, you can easily access and interact with all the saved objects.
 4. To enable TLS, add the attributes mentioned in the following link as environment variables. Link -> https://opensearch.org/docs/latest/install-and-configure/install-dashboards/tls/
 
 ## Additional Benefit of setting up self-managed dashboards in ECS:
