@@ -1,6 +1,6 @@
 # Guide to setup self-managed dashboards in ECS & in EC2 hosted container
 
-## Prerequisite:
+## Prerequisite
 The managed services OpenSearch domain must incorporate Fine-Grained Access Control (FGAC) with HTTP basic authentication, ensuring that a master user is created in the internal user database.
 [Reference here](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac-http-auth.html)
 
