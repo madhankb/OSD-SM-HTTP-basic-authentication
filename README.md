@@ -5,9 +5,11 @@ A managed service OpenSearch domain must incorporate Fine-Grained Access Control
 [Reference here](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac-http-auth.html)
 
 ## Steps to spin up a self-managed dashboards in ECS
-1. Deploy a service within the ECS Fargate cluster using the dashboards docker image. It is crucial to select the same major version of dashboards as the OpenSearch cluster you intend to connect the dashboards to. 
-[Docker images repo link](https://hub.docker.com/r/opensearchproject/opensearch-dashboards/tags)
-2. When creating a task, under container definition port mapping make sure the container ports 5601 and 9200 are added.
+1. Deploy a service within the ECS Fargate cluster using the dashboards docker image.
+> [!IMPORTANT]
+> It is crucial to select the same major version of dashboards as the OpenSearch cluster you intend to connect the dashboards to. [Docker images repo link](https://hub.docker.com/r/opensearchproject/opensearch-dashboards/tags)
+
+2.When creating a task, under container definition port mapping make sure the container ports 5601 and 9200 are added.
 3. Under environment variables, add the mandatory keys and values mentioned in this [doc](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/dashboards.html#dashboards-local) to seamlessly connect with managed service domain.
 
 > [!NOTE]
